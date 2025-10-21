@@ -1,0 +1,47 @@
+{
+  "name": "largefile-monorepo",
+  "private": true,
+  "description": "A monorepo project with Vue3 frontend and Express backend",
+  "scripts": {
+    "dev": "concurrently \"pnpm run dev:backend\" \"pnpm run dev:frontend\"",
+    "dev:frontend": "pnpm --filter @monorepo/web-app run dev",
+    "dev:backend": "pnpm --filter @monorepo/api-server run dev",
+    "build": "pnpm run build:backend && pnpm run build:frontend",
+    "build:frontend": "pnpm --filter @monorepo/web-app run build",
+    "build:backend": "pnpm --filter @monorepo/api-server run build",
+    "test": "pnpm run test:backend && pnpm run test:frontend",
+    "test:frontend": "pnpm --filter @monorepo/web-app run test",
+    "test:backend": "pnpm --filter @monorepo/api-server run test",
+    "test:coverage": "pnpm --filter @monorepo/web-app run test:coverage && pnpm --filter @monorepo/api-server run test:coverage",
+    "lint": "pnpm --filter @monorepo/web-app run lint && pnpm --filter @monorepo/api-server run lint",
+    "lint:check": "pnpm --filter @monorepo/web-app run lint:check && pnpm --filter @monorepo/api-server run lint:check",
+    "format": "pnpm --filter @monorepo/web-app run format && pnpm --filter @monorepo/api-server run format",
+    "format:check": "pnpm --filter @monorepo/web-app run format:check && pnpm --filter @monorepo/api-server run format:check",
+    "type-check": "pnpm --filter @monorepo/web-app run type-check && pnpm --filter @monorepo/api-server run type-check",
+    "clean": "pnpm --filter @monorepo/web-app exec rm -rf dist && pnpm --filter @monorepo/api-server exec rm -rf dist",
+    "install:all": "pnpm install"
+  },
+  "keywords": [
+    "monorepo",
+    "pnpm",
+    "vue3",
+    "express",
+    "typescript",
+    "vite",
+    "vitest"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/spark-md5": "^3.0.5",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.4.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "spark-md5": "^3.0.2"
+  }
+}
