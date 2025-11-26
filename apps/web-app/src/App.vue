@@ -8,6 +8,7 @@
         <router-link to="/" class="nav-link">首页</router-link>
         <router-link to="/about" class="nav-link">关于</router-link>
         <router-link to="/file" class="nav-link">文件上传</router-link>
+        <router-link to="/db" class="nav-link">DB</router-link>
       </div>
     </nav>
 

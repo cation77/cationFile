@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import File from '../views/File.vue';
+import Db from '../views/Db.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/file',
       name: 'file',
       component: File,
+    },
+    {
+      path: '/db',
+      name: 'db',
+      component: Db,
     },
   ],
 });
